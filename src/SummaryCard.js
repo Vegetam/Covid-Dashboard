@@ -1,9 +1,14 @@
 import React from "react";
-export default function Card(props) {
+
+const SummaryCard = ({ title, value, flagUrl }) => {
   return (
     <div className="summary-card">
-      <h2>{props.title}</h2>
-      <p>{props.value}</p>
+      <h3 className="card-title">{title}</h3>
+      <div className="card-content">
+        <span className="card-value">{value}</span>
+      </div>
     </div>
   );
-}
+};
+
+export default SummaryCard;
