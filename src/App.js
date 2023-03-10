@@ -4,26 +4,12 @@ import Select from "react-select";
 import Card from "./SummaryCard";
 import useSummaryData from "./useSummaryData";
 import ErrorBoundary from "./ErrorBoundary";
+import locationOptions from "./locationOptions";
+import moment from "moment";
 
 function App() {
-  const [activeLocation, setActiveLocation] = useState("IT");
-  const [selectedOption, setSelectedOption] = useState(null);
-
-  const locationOptions = [
-    { value: "IT", label: "Italy" },
-    { value: "BE", label: "Belgium" },
-    { value: "BG", label: "Bulgary" },
-    { value: "CZ", label: "Republic  Czech" },
-    { value: "DK", label: "Denmark" },
-    { value: "DE", label: "Germany" },
-    { value: "EE", label: "Estonia" },
-    { value: "IE", label: "Ireland" },
-    { value: "EL", label: "Greece" },
-    { value: "ES", label: "Spain" },
-    { value: "FR", label: "France" },
-    { value: "HR", label: "Croatia" },
-    { value: "CY", label: "Cipro" },
-  ];
+  const [activeLocation, setActiveLocation] = useState(locationOptions[0].value);
+  const [selectedOption, setSelectedOption] = useState(locationOptions[0]);
 
   const {
     data: summaryData,
@@ -58,7 +44,7 @@ function App() {
               onChange={handleLocationChange}
               className="dashboard-select"
             />
-            <p className="update-date">Last Updated: {lastUpdated.toString()}</p>
+            <p className="update-date">Last Updated: {moment(lastUpdated).fromNow()}</p>
             {/* convert the Date object to a string before rendering */}
           </div>
           <div className="dashboard-summary">

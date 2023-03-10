@@ -5,7 +5,7 @@ const SummaryCard = ({ title, value, flagUrl }) => {
     <div className="summary-card">
       <h3 className="card-title">{title}</h3>
       <div className="card-content">
-        <span className="card-value">{value}</span>
+        <span className="card-value">{value || 0}</span>
       </div>
     </div>
   );
