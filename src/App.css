@@ -113,6 +113,8 @@ body {
   display: block;
   margin: 0 auto;
   margin-bottom: 20px;
+  margin-left:5px;
+  max-height:150px;
 }
 
 .grid-container {

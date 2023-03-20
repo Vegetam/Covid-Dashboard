@@ -52,7 +52,7 @@ function App() {
         />
         <p className="last-updated">
           Last Updated: {lastUpdated ? moment(lastUpdated).format("LLL") : ""}
-        </p>
+        </p><br />
         {flagUrl && (
           <img src={flagUrl} alt={`Flag of ${selectedOption.label}`} className="flag" />
         )}
